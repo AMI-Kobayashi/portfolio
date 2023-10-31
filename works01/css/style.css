@@ -75,7 +75,7 @@ body {
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 3% 3px 3%;
+    padding: 0px 5% 3px 3%;
 }
 h1 {
     width: 150px;
@@ -115,24 +115,22 @@ h1 {
 
 @media screen and (max-width: 1040px) {
     /* ヘッダーのロゴが変わリ始める瞬間を、SP版に切り替えるタイミングにする */
-    .wrap {
+    /* .wrap {
         align-items: center;
-    }
+    } */
     .nav_PC {
         display: none;
     }
 
     .sp_btn {
         position: absolute;
-        top: 15px;
-        right: 30px;
+        top: 12px;
+        right: 10px;
         display: block;
         height: 23px;
         cursor: pointer;
         z-index: 99;
         /* z-indexはレイヤーみたいなもの１２３４の順で１が前面に来るよ */
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
     }
     /* 1本線作る */
     .sp_btn span {
@@ -143,7 +141,7 @@ h1 {
         top: 10px;
         display: block;
         width: 35px;
-        height: 1px;
+        height: 2px;
         border-radius: 2px;
         background: #959595;
         /* 四角形の高さ低くして棒のように見せている */
