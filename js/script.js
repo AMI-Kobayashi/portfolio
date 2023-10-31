@@ -1,8 +1,25 @@
 
-sessionStorage.setItem('key', 'value');
-sessionStorage.getItem('key');
 
 (function(d) {
+    var webStorage = function () {
+      if (sessionStorage.getItem('access')) {
+        /*
+          2回目以降アクセス時の処理
+        */
+        $("#splash").addClass('is-active');
+      } else {
+        /*
+          初回アクセス時の処理
+        */
+        sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
+        $("#splash-logo").addClass('is-active'); // loadingアニメーションを表示
+        setTimeout(function () {
+          // ローディングを数秒後に非表示にする
+          $("#splash").addClass('is-active');
+          $("#splash-logo").removeClass('is-active');
+        }, 3000); // ローディングを表示する時間
+      }
+    }
     var config = {
       kitId: 'dhm6lzq',
       scriptTimeout: 3000,
@@ -36,17 +53,3 @@ sessionStorage.getItem('key');
         
 });
 
-jQuery(function () {
-  var webStorage = function () {
-    if (sessionStorage.getItem('access')) {
-      //2回目以降アクセス時の処理
-      console.log('2回目以降のアクセスです');
-      
-    } else {
-      //初回アクセス時の処理
-      sessionStorage.setItem('access', 0);
-      console.log('初回アクセスです');
-    }
-  }
-  webStorage();
-});
