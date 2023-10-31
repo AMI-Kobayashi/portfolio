@@ -1,3 +1,7 @@
+
+sessionStorage.setItem('key', 'value');
+sessionStorage.getItem('key');
+
 (function(d) {
     var config = {
       kitId: 'dhm6lzq',
@@ -30,4 +34,19 @@
     });
     //=====ここまで背景が伸びた後に動かしたいJSをまとめる
         
+});
+
+jQuery(function () {
+  var webStorage = function () {
+    if (sessionStorage.getItem('access')) {
+      //2回目以降アクセス時の処理
+      console.log('2回目以降のアクセスです');
+      
+    } else {
+      //初回アクセス時の処理
+      sessionStorage.setItem('access', 0);
+      console.log('初回アクセスです');
+    }
+  }
+  webStorage();
 });
