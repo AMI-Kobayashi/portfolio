@@ -88,6 +88,7 @@ h1 {
     padding-top: 15px;
     align-items: center;
     margin-right: -50px;
+    margin-left: 110px;
 }
 .nav_PC ul li {
     font-size: 17px;
@@ -130,6 +131,8 @@ h1 {
         cursor: pointer;
         z-index: 99;
         /* z-indexはレイヤーみたいなもの１２３４の順で１が前面に来るよ */
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
     /* 1本線作る */
     .sp_btn span {
